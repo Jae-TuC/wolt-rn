@@ -1,9 +1,12 @@
 import AppleAuthButton from '@/components/auth/AppleAuthButton'
 import GoogleAuthButton from '@/components/auth/GoogleAuthButton'
+import SmoothInfinitScroll from '@/components/SmoothInfinitScroll'
 import { Fonts } from '@/constants/theme'
+import { LinearGradient } from "expo-linear-gradient"
 import React from 'react'
 import { Image, Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Animated, { FadeInDown } from 'react-native-reanimated'
+
 
 const index = () => {
     const openWebLink = () => {
@@ -11,7 +14,18 @@ const index = () => {
     }
     return (
         <View style={styles.container}>
-            <View style={styles.infiniteScrollContainer}></View>
+            <View style={styles.infiniteScrollContainer}>
+                <View>
+                    <SmoothInfinitScroll scrollDirection="down" iconSet="set1" />
+                </View>
+                <View>
+                    <SmoothInfinitScroll scrollDirection="up" iconSet="set2" />
+                </View>
+                <View>
+                    <SmoothInfinitScroll scrollDirection="down" iconSet="set3" />
+                </View>
+                <LinearGradient colors={["transparent", "#fff"]} style={{ position: "absolute", right: 0, left: 0, bottom: 0, height: 200 }} />
+            </View>
 
             <View style={styles.contentContainer}>
                 <Image source={require("@/assets/images/wolt-logo.png")} style={styles.brandLogo} />
@@ -69,11 +83,8 @@ const styles = StyleSheet.create({
         marginBottom: 30,
         lineHeight: 36
     },
-    infiniteScrollContainer: {
-        flex: .8
-    },
     buttonContainer: {
-        gap: 10,
+        gap: 20,
         width: "100%"
     },
     otherButton: {
@@ -103,5 +114,12 @@ const styles = StyleSheet.create({
     privacyLink: {
         color: "#4285f4",
         textDecorationLine: "underline"
-    }
+    },
+    infiniteScrollContainer: {
+        flex: .8,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 4
+    },
 })
