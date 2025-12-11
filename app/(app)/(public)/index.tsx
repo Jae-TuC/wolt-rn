@@ -3,6 +3,7 @@ import GoogleAuthButton from '@/components/auth/GoogleAuthButton'
 import SmoothInfinitScroll from '@/components/SmoothInfinitScroll'
 import { Fonts } from '@/constants/theme'
 import { LinearGradient } from "expo-linear-gradient"
+import { Link } from 'expo-router'
 import React from 'react'
 import { Image, Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Animated, { FadeInDown } from 'react-native-reanimated'
@@ -42,9 +43,11 @@ const index = () => {
                         <GoogleAuthButton />
                     </Animated.View>
                     <Animated.View entering={FadeInDown.delay(300)}>
-                        <TouchableOpacity style={styles.otherButton}>
-                            <Text style={styles.otherButtonText}>Other Login</Text>
-                        </TouchableOpacity>
+                        <Link href={'/(app)/(public)/other-options'} asChild>
+                            <TouchableOpacity style={styles.otherButton}>
+                                <Text style={styles.otherButtonText}>Other Login</Text>
+                            </TouchableOpacity>
+                        </Link>
                     </Animated.View>
                 </View>
 

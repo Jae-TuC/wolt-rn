@@ -4,8 +4,20 @@ import { useFonts } from "expo-font";
 import { Slot } from "expo-router";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-const queryclient = new QueryClient()
+const queryclient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000,
+      retry: 1
+    }
+  }
+})
 
+/**
+ * Top-level app layout that loads Nunito fonts, enables gesture handling, and provides the QueryClient for nested routes.
+ *
+ * @returns The root layout element: a `GestureHandlerRootView` containing a `QueryClientProvider` that wraps the navigation `Slot`, or `null` while fonts are loading.
+ */
 export default function RootLayout() {
   let [fontsLoaded] = useFonts({
     Nunito_400Regular,
