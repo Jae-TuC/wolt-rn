@@ -1,5 +1,4 @@
 import useUserStore from '@/hooks/use-userstore'
-import React from 'react'
 import { Button, Text, View } from 'react-native'
 
 const Page = () => {
