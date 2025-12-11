@@ -13,6 +13,11 @@ const queryclient = new QueryClient({
   }
 })
 
+/**
+ * Top-level app layout that loads Nunito fonts, enables gesture handling, and provides the QueryClient for nested routes.
+ *
+ * @returns The root layout element: a `GestureHandlerRootView` containing a `QueryClientProvider` that wraps the navigation `Slot`, or `null` while fonts are loading.
+ */
 export default function RootLayout() {
   let [fontsLoaded] = useFonts({
     Nunito_400Regular,
