@@ -18,7 +18,7 @@ const RestuarantListPage = () => {
 
     return (
         <View style={styles.container}>
-            <RestaurantHeader title="Restuarant" scrollOffset={scrollOffset} />
+            <RestaurantHeader title="Restaurant" scrollOffset={scrollOffset} />
             <Animated.ScrollView
                 onScroll={scrollHander}
                 showsVerticalScrollIndicator={false}

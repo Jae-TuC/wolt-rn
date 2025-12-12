@@ -1,4 +1,5 @@
 import { Colors, Fonts } from '@/constants/theme';
+import { router } from 'expo-router';
 import { useState } from 'react';
 import { ScrollView, StyleSheet, Switch, Text, TouchableOpacity, View } from 'react-native';
 
@@ -102,7 +103,7 @@ const Page = () => {
             </View>
 
             {/* Apply Button */}
-            <TouchableOpacity style={styles.applyButton}>
+            <TouchableOpacity style={styles.applyButton} onPress={() => router.dismiss()}>
                 <Text style={styles.applyButtonText}>Apply</Text>
             </TouchableOpacity>
         </View>

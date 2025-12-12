@@ -25,7 +25,7 @@ const Layout = () => {
                 presentation: "formSheet",
                 sheetAllowedDetents: [0.8],
                 title: "",
-                headerShown: false,
+                headerShown: true,
                 headerShadowVisible: false,
                 sheetCornerRadius: 16,
                 contentStyle: {
