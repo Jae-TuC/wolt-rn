@@ -12,6 +12,11 @@ const RestuarantList = () => {
         </View>
     }
 
+    if (error) {
+        return <View style={{ padding: 16 }}>
+            <Text style={{ color: Colors.muted }}>Failed to load restaurants. Please try again.</Text>
+        </View>
+    }
 
     return (
         <>

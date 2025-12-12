@@ -72,7 +72,10 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         backgroundColor: '#fff',
         marginVertical: 8,
-        boxShadow: '0px 4px 2px -2px rgba(0, 0, 0, 0.2)',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 2,
         elevation: 2,
     },
     categoryImageContainer: {
