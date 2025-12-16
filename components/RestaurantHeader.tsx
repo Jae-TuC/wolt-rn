@@ -75,7 +75,7 @@ const RestaurantHeader = ({ title, scrollOffset }: RestaurantHeaderProps) => {
     return (
         <Animated.View style={[styles.headerContainer, shadowStyle, { paddingTop: insets.top }]}>
             {/* Header 1 */}
-            <Animated.View style={[styles.header1, header1Style]}>
+            <Animated.View style={[styles.header1, header1Style]} pointerEvents={false ? 'none' : 'auto'}>
                 <Link href={"/(app)/(auth)/(modal)/location"} asChild>
                     <TouchableOpacity style={styles.locationButton}>
                         <View style={styles.locationButtonIcon}>
@@ -98,7 +98,7 @@ const RestaurantHeader = ({ title, scrollOffset }: RestaurantHeaderProps) => {
             </Animated.View>
 
             {/* Header 2 */}
-            <Animated.View style={[styles.header2, header2Style]}>
+            <Animated.View style={[styles.header2, header2Style]} pointerEvents={false ? 'auto' : 'none'}>
                 <View style={styles.centerContent}>
                     <Text style={styles.titleSmall}>{title}</Text>
                     <Link href={"/(app)/(auth)/(modal)/location"} asChild>
