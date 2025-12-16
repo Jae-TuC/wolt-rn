@@ -7,6 +7,7 @@ const Layout = () => {
     return (
         <Stack>
             <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen name="(modal)/map" options={{}} />
             <Stack.Screen name="(modal)/location" options={{
                 presentation: "formSheet",
                 sheetAllowedDetents: [0.7],
