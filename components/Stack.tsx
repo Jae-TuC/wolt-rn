@@ -4,16 +4,16 @@ import type {
 } from "@react-navigation/native";
 import { withLayoutContext } from "expo-router";
 import {
-    createBlankStackNavigator,
-    type BlankStackNavigationEventMap,
-    type BlankStackNavigationOptions,
-} from "react-native-screen-transitions/blank-stack";
+    createNativeStackNavigator,
+    type NativeStackNavigationEventMap,
+    type NativeStackNavigationOptions,
+} from "react-native-screen-transitions/native-stack";
 
-const { Navigator } = createBlankStackNavigator();
+const { Navigator } = createNativeStackNavigator();
 
 export const Stack = withLayoutContext<
-    BlankStackNavigationOptions,
+    NativeStackNavigationOptions,
     typeof Navigator,
     StackNavigationState<ParamListBase>,
-    BlankStackNavigationEventMap
+    NativeStackNavigationEventMap
 >(Navigator);

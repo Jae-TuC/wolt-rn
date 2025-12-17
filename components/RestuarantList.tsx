@@ -1,6 +1,7 @@
 import { Colors } from '@/constants/theme'
 import { useRestaurants } from '@/hooks/useRestaurants'
 import Ionicons from '@expo/vector-icons/Ionicons'
+import { Link } from 'expo-router'
 import { ActivityIndicator, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 const RestuarantList = () => {
@@ -22,22 +23,25 @@ const RestuarantList = () => {
         <>
             {restaurants?.map((item) => (
                 <View key={item.id}>
-                    <TouchableOpacity style={styles.card}>
-                        <Image source={item.image!} style={styles.image} />
-                        <View style={styles.info} >
-                            <Text style={styles.name}>{item.name}</Text>
-                            <Text style={styles.description} numberOfLines={2}>{item.description}</Text>
-                        </View>
+                    <Link href={'/(app)/(auth)/(modal)/(restuarant)/[id]'} asChild>
+                        <TouchableOpacity style={styles.card}>
+                            <Image source={item.image!} style={styles.image} />
+                            <View style={styles.info} >
+                                <Text style={styles.name}>{item.name}</Text>
+                                <Text style={styles.description} numberOfLines={2}>{item.description}</Text>
+                            </View>
 
-                        <View style={styles.metaData}>
-                            <Ionicons name="bicycle-outline" size={16} color={"#666"} />
-                            <Text style={styles.metadataText}>€{item.deliveryFee.toFixed(2)}</Text>
-                            <Text style={styles.dot}>•</Text>
-                            <Text style={styles.metadataText}>€€€€</Text>
-                            <Text style={styles.dot}>•</Text>
-                            <Ionicons name="happy-outline" size={16} color={Colors.muted} />
-                        </View>
-                    </TouchableOpacity>
+                            <View style={styles.metaData}>
+                                <Ionicons name="bicycle-outline" size={16} color={"#666"} />
+                                <Text style={styles.metadataText}>€{item.deliveryFee.toFixed(2)}</Text>
+                                <Text style={styles.dot}>•</Text>
+                                <Text style={styles.metadataText}>€€€€</Text>
+                                <Text style={styles.dot}>•</Text>
+                                <Ionicons name="happy-outline" size={16} color={Colors.muted} />
+                            </View>
+                        </TouchableOpacity>
+                    </Link>
+
                 </View>
             ))}
         </>
