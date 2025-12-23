@@ -7,12 +7,12 @@ const RootNav = () => {
 
     return (
         <Stack>
-            <Stack.Protected guard={isGuest || user}>
+            {(isGuest || user) ? (
                 <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-            </Stack.Protected>
-            <Stack.Protected guard={!isGuest && !user}>
+            ) : null}
+            {(!isGuest && !user) ? (
                 <Stack.Screen name="(public)" options={{ headerShown: false }} />
-            </Stack.Protected>
+            ) : null}
         </Stack>
     )
 }
