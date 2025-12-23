@@ -1,13 +1,25 @@
+import { Stack } from '@/components/Stack'
 import { Ionicons } from '@expo/vector-icons'
-import { Stack, useRouter } from 'expo-router'
+import { useRouter } from 'expo-router'
 import { TouchableOpacity } from 'react-native'
+import Transition from "react-native-screen-transitions"
+
 
 const Layout = () => {
     const router = useRouter()
     return (
         <Stack>
             <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-            <Stack.Screen name="(modal)/map" options={{}} />
+            <Stack.Screen name="(modal)/map" options={{
+                // headerShown: false,
+                enableTransitions: true,
+                ...Transition.Presets.DraggableCard()
+            }} />
+            <Stack.Screen name="(modal)/(restuarant)/[id]" options={{
+                // headerShown: false,
+                enableTransitions: true,
+                ...Transition.Presets.DraggableCard()
+            }} />
             <Stack.Screen name="(modal)/location" options={{
                 presentation: "formSheet",
                 sheetAllowedDetents: [0.7],
