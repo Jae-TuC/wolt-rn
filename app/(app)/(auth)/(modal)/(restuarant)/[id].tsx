@@ -1,5 +1,6 @@
 import { MenuItem } from '@/components/MenuItems'
 import RestaurantDetailsHeader from '@/components/RestaurantDetailsHeader'
+import ViewOrderButton from '@/components/buttons/ViewOrderButton'
 import { Colors } from '@/constants/theme'
 import { Dish } from '@/data/restaurant_menu'
 import { useMenu } from '@/hooks/useMenu'
@@ -219,6 +220,7 @@ const Page = () => {
                     </>
                 }
             />
+            <ViewOrderButton restaurant={restaurant} />
         </View>
     )
 }

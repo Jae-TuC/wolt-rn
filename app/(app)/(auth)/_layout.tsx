@@ -52,6 +52,29 @@ const Layout = () => {
                     </TouchableOpacity>
                 ),
             }} />
+            <Stack.Screen name="(modal)/(menu)/[id]" options={{
+                presentation: "formSheet",
+                sheetAllowedDetents: [1],
+                title: "",
+                headerShown: false,
+                headerShadowVisible: false,
+                sheetCornerRadius: 16,
+                contentStyle: {
+                    backgroundColor: "#fff",
+                },
+                sheetGrabberVisible: true,
+                sheetExpandsWhenScrolledToEdge: true,
+                headerRight: () => (
+                    <TouchableOpacity style={{ padding: 4, borderRadius: 20 }} onPress={() => router.dismiss()}>
+                        <Ionicons name='close-sharp' size={28} color='#666' />
+                    </TouchableOpacity>
+                ),
+            }} />
+
+            <Stack.Screen name='order' options={{
+                enableTransitions: true,
+                ...Transition.Presets.SharedXImage({ sharedBoundTag: "sharedImage" })
+            }} />
         </Stack>
     )
 }
